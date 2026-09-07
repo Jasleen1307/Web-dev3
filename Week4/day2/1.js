@@ -108,3 +108,8 @@ app.delete("/delete/:id", (req, res) => {
 app.listen(8080, () => {
   console.log("server started");
 });
+
+
+/* First 
+ 1. Create a new file called krmu.json and add the following content to it:
+ Data in krmu is json format keys in json uses double quotes and values can be in double quotes or numbers or boolean or null*/ 
