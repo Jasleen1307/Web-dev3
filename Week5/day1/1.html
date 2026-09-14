@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS ERROR</title>
+</head>
+<body>
+    <h1>CORS ERROR</h1>
+    <div id="para">display data here...</div>
+
+
+<script>
+    const main=async()=>{
+        try{
+            const response=await fetch("http://localhost:8080")
+            console.log(response)// res= readablestream
+            
+            const data=await response.text();
+            console.log(data)
+
+            document.getElementById("para").innerText=data;
+
+
+        } catch(err){
+            console.log(err)
+        }
+
+
+    }
+    main()
+</script>
+</body>
+</html>  
+<!--CORS
+ 1. Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers to restrict web pages from making requests to a different domain than the one that served the web page. It is a mechanism that allows servers to specify who can access their resources and how they can be accessed.
+2. CORS is important for web security because it helps prevent malicious websites from making unauthorized requests to a different domain on behalf of the user. Without CORS, a malicious website could potentially steal sensitive information or perform actions on behalf of the user without their consent.
+
+It is an external middleware firstly we install it using npm install cors and then we import it in our main file and use it as app.use(cors()).
+-->
