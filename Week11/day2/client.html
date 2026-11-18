@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <script src="https://cdn.socket.io/4.8.4/socket.io.min.js" 
+        integrity="sha384-fBrXvbDtHoeKWJ/hcA6M+YGueiDW+h45I7V6F2kD1S8bOkrF9rZYPLVkCR6BLR/1"
+         crossorigin="anonymous">
+        </script> 
+    
+</body>
+</html>
+<script>
+    const socket=io("ws://localhost:8080/",{
+        "transports":["websocket"]
+    })
+    socket.emit("msg","Hello from client side");
+    socket.on("chat",(cb)=>{
+        console.log(cb);
+    });     
+</script>
